@@ -124,12 +124,12 @@ class Media extends Field
             })
             ->each(function ($media) use ($requestAttribute) {
                 Validator::make([$requestAttribute => $media], [
-                    $requestAttribute => array_merge($this->defaultValidatorRules, (array)$this->singleMediaRules),
+//                     $requestAttribute => array_merge($this->defaultValidatorRules, (array)$this->singleMediaRules),
                 ])->validate();
             });
 
-        Validator::make([$requestAttribute => $data], [$requestAttribute => $this->collectionMediaRules])
-            ->validate();
+//         Validator::make([$requestAttribute => $data], [$requestAttribute => $this->collectionMediaRules])
+//             ->validate();
 
         return function () use ($request, $data, $attribute, $model) {
             $this->handleMedia($request, $model, $attribute, $data);
